@@ -16,26 +16,27 @@
 // console.log(myself);
 //ES6 REVIEW .....................................................................................................
 // Exercise 1 -  Arrow Function
-const double = (value) => value * 2;
+var double = function (value) { return value * 2; };
 console.log(double(10));
 // Exercise 2 - provide some default values...
-const greet = (name = 'Frank') => {
+var greet = function (name) {
+    if (name === void 0) { name = 'Frank'; }
     console.log('Hello ' + name);
 };
 greet();
 greet("Sara");
 // Exercise 3 - Spread operator
-const numbers = [-3, 33, 38, 5];
-console.log(Math.min(...numbers));
+var numbers = [-3, 33, 38, 5];
+console.log(Math.min.apply(Math, numbers));
 // Exercise 4 - Rest operator ...
-const newArray = [55, 20];
-newArray.push(...newArray);
+var newArray = [55, 20];
+newArray.push.apply(newArray, newArray);
 console.log(newArray);
 // Exercise 5 - Array restructuring
-const testResults = [3.89, 2.99, 1.38];
-const [result1, result2, result3] = testResults;
+var testResults = [3.89, 2.99, 1.38];
+var result1 = testResults[0], result2 = testResults[1], result3 = testResults[2];
 console.log(result1, result2, result3);
 // Exercise 6 - Object restructuring
-const scientist = { firstName: "Will", experience: 12 };
-const { firstName, experience } = scientist;
+var scientist = { firstName: "Will", experience: 12 };
+var firstName = scientist.firstName, experience = scientist.experience;
 console.log(firstName, experience);

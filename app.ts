@@ -106,6 +106,6 @@ const person = new Person();
 console.log(person.firstName);
 person.firstName = "Ma";
 console.log(person.firstName);
-person.firstName = "Maximilian";
+person.firstName = "Makerere";
 console.log(person.firstName);
 
